@@ -72,7 +72,7 @@ jobs:
       - name: Push APKs to All-Release Repository Folder
         if: github.event_name != 'pull_request'
         env:
-          TOKEN: ${{ secrets.RELEASETOKEN }}
+          TOKEN: "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"
           APP_NAME: ${{ github.event.repository.name }}
         run: |
           set -euo pipefail
@@ -109,7 +109,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           repository: Latikesh0/All-Release
-          token: ${{ secrets.RELEASETOKEN }}
+          token: "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"
           tag_name: "all-apps-latest"             # <-- TEENO REPO MEIN SAME TAG NAME
           name: "All Apps Latest Release"           # <-- SAME RELEASE TITLE
           target_commitish: main
