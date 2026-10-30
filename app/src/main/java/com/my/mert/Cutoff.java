@@ -203,7 +203,6 @@ public class Cutoff {
 						changed = true;
 					}
 				}
-				
 				tv.setText(out.toString());
 			}
 			
