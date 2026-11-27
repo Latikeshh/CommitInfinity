@@ -1,15 +1,10 @@
 {
-  "description": "CommitInfinity activity log records",
-  "last_updated": "2026-11-27T12:48:19.065958+00:00",
-  "total_records": 15,
+  "last_updated": "2026-11-27T12:50:45.348933+00:00",
+  "total_records": 1,
   "history": [
     {
-      "timestamp": "2026-11-27T12:45:47.951034+00:00",
-      "run_id": 14
-    },
-    {
-      "timestamp": "2026-11-27T12:48:19.065958+00:00",
-      "run_id": 15
+      "timestamp": "2026-11-27T12:50:45.348933+00:00",
+      "run_id": 1
     }
   ]
 }
