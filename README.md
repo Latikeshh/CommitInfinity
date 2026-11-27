@@ -1,3 +1,4 @@
+<!-- CommitInfinity Documentation -->
 # CommitInfinity ♾️
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/CommitInfinity/auto-commit.yml?branch=main&style=flat-square)

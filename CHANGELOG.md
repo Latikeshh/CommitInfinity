@@ -1,3 +1,4 @@
+<!-- CommitInfinity Changelog -->
 # Changelog
 
 All notable changes to the **CommitInfinity** project will be documented in this file.
