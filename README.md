@@ -1,8 +1,9 @@
 <!-- CommitInfinity Documentation - Repository Overview -->
 # CommitInfinity ♾️
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/CommitInfinity/auto-commit.yml?branch=main&style=flat-square)
-![License](https://img.shields.io/github/license/YOUR_USERNAME/CommitInfinity?style=flat-square)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Latikeshh/CommitInfinity/auto-commit.yml?branch=main&style=flat-square)](https://github.com/Latikeshh/CommitInfinity/actions)
+[![License](https://img.shields.io/github/license/Latikeshh/CommitInfinity?style=flat-square)](LICENSE.md)
+[![committers.top badge](https://user-badge.committers.top/india/Latikeshh.svg)](https://user-badge.committers.top/india/Latikeshh)
 
 **CommitInfinity** is a conceptual repository automation utility designed for generating continuous commit activity and maintaining structured repository history.
 
