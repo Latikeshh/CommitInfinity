@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CommitInfinity Advanced Live Dashboard & Metrics Generator
-Generates live statistics, progress bars, badges, and updates STATS.md.
+Generates live statistics, progress bars, badges, and updates README.md & STATS.md.
 """
 
 import json
@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 DATA_DIR = "data"
 LOG_FILE = os.path.join(DATA_DIR, "activity_log.json")
 STATS_FILE = "STATS.md"
+README_FILE = "README.md"
 TARGET_COMMITS = 100000
 
 def get_git_commit_count():
@@ -54,12 +55,89 @@ def update_activity_log(commit_count):
 
     return log_data
 
-def update_stats_markdown(log_data, commit_count):
+def update_readme_and_stats(log_data, commit_count):
     progress_bar = generate_progress_bar(commit_count, TARGET_COMMITS, length=25)
     percentage = (commit_count / TARGET_COMMITS) * 100
     remaining = max(0, TARGET_COMMITS - commit_count)
+    last_sync = log_data['last_updated']
 
-    content = f"""# ⚡ CommitInfinity Live Performance Dashboard ♾️
+    dashboard_section = f"""<div align="center">
+
+# ⚡ CommitInfinity ♾️
+
+[![Commits Counter](https://img.shields.io/badge/Total_Commits-{commit_count:,}-brightgreen?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Latikeshh/CommitInfinity)
+[![Progress](https://img.shields.io/badge/Progress-{percentage:.1f}%25-blue?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+[![Status](https://img.shields.io/badge/Status-Active_Automation-success?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+[![Target](https://img.shields.io/badge/Goal-100%2C000_Commits-orange?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+
+[![committers.top badge](https://user-badge.committers.top/india/Latikeshh.svg)](https://user-badge.committers.top/india/Latikeshh)
+[![License](https://img.shields.io/github/license/Latikeshh/CommitInfinity?style=flat-square)](LICENSE.md)
+
+</div>
+
+---
+
+### 📊 Live Performance Dashboard
+
+| Metric | Live Value |
+| :--- | :--- |
+| 🚀 **Current Commit Count** | **`{commit_count:,}`** |
+| 🎯 **Target Milestone** | **`{TARGET_COMMITS:,}`** |
+| 📉 **Remaining Commits** | **`{remaining:,}`** |
+| 📈 **Completion Percentage** | **`{percentage:.2f}%`** |
+| ⏳ **Last Sync (UTC)** | `{last_sync}` |
+
+#### 🔄 Live Progress Bar
+{progress_bar}
+
+---
+
+**CommitInfinity** is a high-speed repository automation utility designed for generating continuous commit activity, line-by-line counter logging (`counter.txt`), and maintaining structured repository history.
+
+---
+
+## 🎯 Core Concepts
+
+* **Line-by-Line Counter Record**: Appends incrementing numerical logs to `counter.txt` on every commit, ensuring 100% real file diffs.
+* **Dual Execution Modes**: Supports both automated cloud-based scheduling via GitHub Actions and manual local execution via terminal loops (`commit_script.ps1`).
+* **Live Dashboard Integration**: Automatically updates performance metrics, badges, and progress bars without causing execution lag.
+* **Batch Push Efficiency**: Designed to support batching operations for optimal network performance and GitHub API compliance.
+
+---
+
+## 🚀 Execution Overview
+
+### 1. Local PowerShell Automation
+Run the local high-speed script from your PowerShell terminal:
+```powershell
+.\\commit_script.ps1
+```
+
+### 2. Cloud-Based Automation
+Cloud automation operates through GitHub Actions workflows defined inside `.github/workflows/auto-commit.yml`.
+
+---
+
+## 🛡️ Project Documentation & Policies
+
+* [SECURITY.md](SECURITY.md) — Security policies and vulnerability reporting procedures.
+* [CONTRIBUTING.md](CONTRIBUTING.md) — Community contribution guidelines and submission standards.
+* [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — Community behavior standards and covenant.
+* [CHANGELOG.md](CHANGELOG.md) — Project update history and version release notes.
+* [STATS.md](STATS.md) — Detailed execution audit logs and historical sync records.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE.md).
+"""
+
+    with open(README_FILE, "w", encoding="utf-8") as f:
+        f.write(dashboard_section)
+
+    # Also update STATS.md
+    stats_content = f"""# ⚡ CommitInfinity Live Performance Dashboard ♾️
 
 <div align="center">
 
@@ -80,7 +158,7 @@ def update_stats_markdown(log_data, commit_count):
 | 🎯 **Target Milestone** | **`{TARGET_COMMITS:,}`** |
 | 📉 **Remaining Commits** | **`{remaining:,}`** |
 | 📈 **Completion Percentage** | **`{percentage:.2f}%`** |
-| ⏳ **Last Sync (UTC)** | `{log_data['last_updated']}` |
+| ⏳ **Last Sync (UTC)** | `{last_sync}` |
 
 #### 🔄 Live Progress Bar
 {progress_bar}
@@ -93,13 +171,13 @@ def update_stats_markdown(log_data, commit_count):
 | :---: | :---: | :---: | :---: |
 """
     for item in reversed(log_data.get("history", [])):
-        content += f"| #{item['run_id']} | `{item['timestamp']}` | `{item.get('commit_count', 0):,}` | Operational ✅ |\n"
+        stats_content += f"| #{item['run_id']} | `{item['timestamp']}` | `{item.get('commit_count', 0):,}` | Operational ✅ |\n"
 
     with open(STATS_FILE, "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write(stats_content)
 
 if __name__ == "__main__":
     count = get_git_commit_count()
     data = update_activity_log(count)
-    update_stats_markdown(data, count)
-    print(f"[CommitInfinity] Dashboard updated successfully! Current commits: {count:,}")
+    update_readme_and_stats(data, count)
+    print(f"[CommitInfinity] README.md & STATS.md updated successfully! Current commits: {count:,}")

@@ -1,52 +1,57 @@
-<!-- CommitInfinity Documentation - Repository Overview -->
-# CommitInfinity ♾️
+<div align="center">
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Latikeshh/CommitInfinity/auto-commit.yml?branch=main&style=flat-square)](https://github.com/Latikeshh/CommitInfinity/actions)
-[![License](https://img.shields.io/github/license/Latikeshh/CommitInfinity?style=flat-square)](LICENSE.md)
+# ⚡ CommitInfinity ♾️
+
+[![Commits Counter](https://img.shields.io/badge/Total_Commits-34,652-brightgreen?style=for-the-badge&logo=git&logoColor=white)](https://github.com/Latikeshh/CommitInfinity)
+[![Progress](https://img.shields.io/badge/Progress-34.7%25-blue?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+[![Status](https://img.shields.io/badge/Status-Active_Automation-success?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+[![Target](https://img.shields.io/badge/Goal-100%2C000_Commits-orange?style=for-the-badge)](https://github.com/Latikeshh/CommitInfinity)
+
 [![committers.top badge](https://user-badge.committers.top/india/Latikeshh.svg)](https://user-badge.committers.top/india/Latikeshh)
+[![License](https://img.shields.io/github/license/Latikeshh/CommitInfinity?style=flat-square)](LICENSE.md)
 
-**CommitInfinity** is a conceptual repository automation utility designed for generating continuous commit activity and maintaining structured repository history.
+</div>
 
-By leveraging empty Git commits, CommitInfinity allows developers to increment commit counters and maintain continuous repository activity without polluting project source files or creating unnecessary code changes.
+---
+
+### 📊 Live Performance Dashboard
+
+| Metric | Live Value |
+| :--- | :--- |
+| 🚀 **Current Commit Count** | **`34,652`** |
+| 🎯 **Target Milestone** | **`100,000`** |
+| 📉 **Remaining Commits** | **`65,348`** |
+| 📈 **Completion Percentage** | **`34.65%`** |
+| ⏳ **Last Sync (UTC)** | `2026-11-27 16:01:52 UTC` |
+
+#### 🔄 Live Progress Bar
+`[█████████░░░░░░░░░░░░░░░░] 34.65%`
+
+---
+
+**CommitInfinity** is a high-speed repository automation utility designed for generating continuous commit activity, line-by-line counter logging (`counter.txt`), and maintaining structured repository history.
 
 ---
 
 ## 🎯 Core Concepts
 
-* **Zero-File-Tree Pollution**: Utilizes Git's empty commit capability to record historical activity without creating dummy files or modifying project source code.
-* **Dual Execution Modes**: Supports both automated cloud-based scheduling via GitHub Actions and manual local execution via terminal loops.
-* **Custom Commit Tracking**: Allows flexible commit message formatting, including sequential numerical counters and UTC timestamp records.
+* **Line-by-Line Counter Record**: Appends incrementing numerical logs to `counter.txt` on every commit, ensuring 100% real file diffs.
+* **Dual Execution Modes**: Supports both automated cloud-based scheduling via GitHub Actions and manual local execution via terminal loops (`commit_script.ps1`).
+* **Live Dashboard Integration**: Automatically updates performance metrics, badges, and progress bars without causing execution lag.
 * **Batch Push Efficiency**: Designed to support batching operations for optimal network performance and GitHub API compliance.
 
 ---
 
 ## 🚀 Execution Overview
 
-### 1. Cloud-Based Automation
-Cloud automation operates through GitHub Actions workflows defined inside the repository configuration directory:
-* Automatically triggers on custom cron schedules (such as every 5 minutes, hourly, or daily).
-* Supports manual execution triggers directly from the GitHub Actions dashboard.
-* Requires write permissions enabled under Repository Settings to allow automated branch updates.
+### 1. Local PowerShell Automation
+Run the local high-speed script from your PowerShell terminal:
+```powershell
+.\commit_script.ps1
+```
 
-### 2. Local Terminal Execution
-Local execution allows direct command-line execution from your workstation terminal:
-* Provides full control over iteration speeds, custom counter naming, and push intervals.
-* Guarantees direct attribution to your local Git profile identity.
-* Allows periodic batch pushing to push commits in chunks to remote repositories.
-
----
-
-## ⚙️ Cron Schedule Overview
-
-When configuring scheduled workflows, standard cron schedules can be defined based on frequency needs:
-
-| Frequency | Description |
-| :--- | :--- |
-| Every 5 Minutes | High-frequency continuous commit interval |
-| Every 15 Minutes | Moderate-frequency commit interval |
-| Every Hour | Hourly background status update |
-| Every 6 Hours | Periodic daily checkpoint |
-| Daily | Single daily commit record at midnight UTC |
+### 2. Cloud-Based Automation
+Cloud automation operates through GitHub Actions workflows defined inside `.github/workflows/auto-commit.yml`.
 
 ---
 
@@ -56,6 +61,7 @@ When configuring scheduled workflows, standard cron schedules can be defined bas
 * [CONTRIBUTING.md](CONTRIBUTING.md) — Community contribution guidelines and submission standards.
 * [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — Community behavior standards and covenant.
 * [CHANGELOG.md](CHANGELOG.md) — Project update history and version release notes.
+* [STATS.md](STATS.md) — Detailed execution audit logs and historical sync records.
 
 ---
 
