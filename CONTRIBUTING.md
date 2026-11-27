@@ -16,7 +16,7 @@ Thank you for your interest in contributing to **CommitInfinity**! We welcome co
 - Explain why this enhancement would be beneficial to the project.
 
 ### 3. Submitting Pull Requests
-1. Fork the repository (`https://github.com/latikeshh/CommitInfinity.git`).
+1. Fork the repository (`https://github.com/YOUR_USERNAME/CommitInfinity.git`).
 2. Create a feature branch:
    ```bash
    git checkout -b feature/your-feature-name
