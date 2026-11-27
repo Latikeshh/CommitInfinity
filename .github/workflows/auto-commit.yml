@@ -1,37 +1,12 @@
-# CommitInfinity Automated Commit Workflow - Continuous Repository Automation
-name: CommitInfinity - Auto Commit
+# This workflow has been replaced by repo-health.yml
+name: CommitInfinity - Legacy Auto Commit Disabled
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
-concurrency:
-  group: commit-infinity-auto
-  cancel-in-progress: false
-
 jobs:
-  auto-commit:
+  disabled:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Configure Git
-        run: |
-          git config user.name "CommitInfinity Bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      - name: Create empty commit
-        run: |
-          git commit --allow-empty \
-            -m "CommitInfinity: automated commit $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-
-      - name: Push commit
-        run: git push origin HEAD:${GITHUB_REF_NAME}
+      - name: Notice
+        run: echo "High-frequency automatic commit schedules have been removed. Use scripts/commit_script.ps1 locally."

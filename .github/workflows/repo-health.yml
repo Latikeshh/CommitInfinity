@@ -1,0 +1,44 @@
+# CommitInfinity Repository Health & Validation Workflow
+name: CommitInfinity - Repository Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Repository Validation & Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validate Markdown & Documentation Files
+        run: |
+          echo "Checking essential documentation files..."
+          for file in README.md LICENSE.md SECURITY.md CONTRIBUTING.md CODE_OF_CONDUCT.md CHANGELOG.md; do
+            if [ -f "$file" ]; then
+              echo "  [OK] $file exists."
+            else
+              echo "  [WARNING] $file missing!"
+            fi
+          done
+
+      - name: Check Git Configuration & Working Tree
+        run: |
+          echo "Repository Status:"
+          git status

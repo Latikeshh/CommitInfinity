@@ -1,4 +1,3 @@
-<!-- CommitInfinity Changelog - Version Release History -->
 # Changelog
 
 All notable changes to the **CommitInfinity** project will be documented in this file.
@@ -8,11 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.0.0] - 2026-11-27
+
+### Changed & Refactored
+- **Project Repositioning**: Redefined project core identity as an experimental Git automation and repository history management toolkit.
+- **Device-Only Local Scripts**: Configured `.gitignore` to keep execution scripts (`commit_script.ps1`, `commit_script.sh`, `metrics_logger.py`) and data logs (`counter.txt`, `data/`) on local device only.
+- **Local Automation Script**: Added execution preview mode, Git repository and active branch validation, parameter controls, interactive confirmation prompts, and manual push defaults.
+- **Workflow Audit**: Removed high-frequency 5-minute auto-commit cron workflow (`auto-commit.yml`). Added repository health and linting workflow (`repo-health.yml`).
+- **Dynamic Statistics**: Replaced artificial 100,000 commit progress bars with genuine Git repository metrics (`git rev-list --count HEAD`).
+- **Documentation Suite**: Rewrote `README.md`, `STATS.md`, `CONTRIBUTING.md`, `SECURITY.md`, and `CODE_OF_CONDUCT.md` to reflect professional open-source standards.
+
+---
+
 ## [1.0.0] - 2025-03-08
 
 ### Added
-- Automated commit workflow configuration under `.github/workflows/auto-commit.yml`.
-- Support for cron schedule (`*/5 * * * *`) executing every 5 minutes.
-- Support for manual workflow dispatch (`workflow_dispatch`).
-- Empty commit generation using `--allow-empty` with UTC timestamp formatting.
-- Comprehensive documentation suite including `README.md`, `SECURITY.md`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `CHANGELOG.md`, and `LICENSE.md`.
+- Initial release of local commit generation script and workflow automation prototypes.

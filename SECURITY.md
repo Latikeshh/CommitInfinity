@@ -1,4 +1,3 @@
-<!-- CommitInfinity Security Policy - Vulnerability Reporting -->
 # Security Policy
 
 ## Supported Versions
@@ -7,23 +6,23 @@ Only the latest `main` branch of **CommitInfinity** is actively supported with s
 
 | Version | Supported          |
 | ------- | ------------------ |
-| `main`  | :white_check_mark: |
+| `2.0.x` | :white_check_mark: |
 | Legacy  | :x:                |
 
 ---
 
-## Security Best Practices for CommitInfinity
+## Security Best Practices
 
-When using automated workflow repositories such as CommitInfinity, adhere to the following security recommendations:
+When using repository automation tools such as CommitInfinity, adhere to the following security recommendations:
 
-1. **GitHub Actions Permissions**:
-   - Limit workflow permissions strictly to `contents: write` as defined in `.github/workflows/auto-commit.yml`.
-   - Avoid granting administrative permissions (`id-token`, `secrets`, etc.) unless specifically required.
+1. **Local Script Execution**:
+   - Keep local automation scripts (`commit_script.ps1`, `commit_script.sh`) local to your workstation device.
+   - Do not commit secrets, private tokens, or authentication credentials into repository files or scripts.
 2. **Personal Access Tokens (PATs) & Secrets**:
-   - Never commit API keys, GitHub Personal Access Tokens (PAT), or private keys directly into repository files or workflow scripts.
-   - Use GitHub Repository Secrets (`${{ secrets.GITHUB_TOKEN }}`) for authentication.
-3. **Branch Protection**:
-   - Enable branch protection rules on `main` to regulate direct pushes and require status checks if necessary.
+   - Never hardcode GitHub Personal Access Tokens (PATs) or private keys inside automation scripts.
+   - Use standard Git credentials manager or SSH keys for remote authentication.
+3. **GitHub Actions Permissions**:
+   - Workflows in `.github/workflows/` should operate with read-only permissions (`contents: read`) unless explicitly required.
 
 ---
 
@@ -32,9 +31,5 @@ When using automated workflow repositories such as CommitInfinity, adhere to the
 If you discover a security vulnerability or misconfiguration in **CommitInfinity**:
 
 1. **Do not** report security vulnerabilities through public GitHub issues.
-2. Send a report detailing:
-   - Description of the issue or security misconfiguration.
-   - Steps to reproduce the issue.
-   - Potential impact of the vulnerability.
-
-We aim to respond to security reports promptly and release patches as needed.
+2. Please open a private security disclosure on GitHub or contact repository maintainers directly.
+3. Detail the nature of the vulnerability, step-by-step reproduction instructions, and potential impact.

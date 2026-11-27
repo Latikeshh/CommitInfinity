@@ -1,17 +1,27 @@
-# CommitInfinity Repository Git Ignore Configuration - Excluded Files
-# IDE / Editor files
+# CommitInfinity Git Ignore Configuration
+
+# Local Device Execution Scripts (Kept on Device Only)
+commit_script.ps1
+commit_script.sh
+metrics_logger.py
+
+# Local Data Logs & Counter Files (Kept on Device Only)
+counter.txt
+data/
+*.log
+
+# IDE & Editor Files
 .idea/
 *.iml
 *.ipr
 *.iws
 .vscode/
 
-# OS files
+# OS System Files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Logs and Scratch files
-*.log
+# Temporary & Scratch Artifacts
 .artifacts/
 scratch/

@@ -1,4 +1,3 @@
-<!-- CommitInfinity Contribution Guidelines - Developer Guidelines -->
 # Contributing to CommitInfinity
 
 Thank you for your interest in contributing to **CommitInfinity**! We welcome contributions, bug reports, and feature suggestions.
@@ -9,20 +8,20 @@ Thank you for your interest in contributing to **CommitInfinity**! We welcome co
 
 ### 1. Reporting Bugs & Issues
 - Check existing issues before opening a new one.
-- Provide a clear title and detailed description of the problem.
-- Include workflow execution logs or error messages where applicable.
+- Use our GitHub Issue templates for Bug Reports and Feature Proposals.
+- Provide a clear title, system details, and step-by-step instructions to reproduce the issue.
 
 ### 2. Suggesting Enhancements
-- Open a GitHub issue describing the proposed feature.
-- Explain why this enhancement would be beneficial to the project.
+- Open a GitHub issue describing the proposed feature or improvement.
+- Explain why this enhancement would be beneficial to Git repository automation and history management.
 
 ### 3. Submitting Pull Requests
-1. Fork the repository (`https://github.com/YOUR_USERNAME/CommitInfinity.git`).
+1. Fork the repository (`https://github.com/Latikeshh/CommitInfinity.git`).
 2. Create a feature branch:
    ```bash
    git checkout -b feature/your-feature-name
    ```
-3. Commit your changes:
+3. Commit your changes with clear, descriptive commit messages:
    ```bash
    git commit -m "feat: description of changes"
    ```
@@ -30,12 +29,12 @@ Thank you for your interest in contributing to **CommitInfinity**! We welcome co
    ```bash
    git push origin feature/your-feature-name
    ```
-5. Open a Pull Request against the `main` branch.
+5. Open a Pull Request against the `main` branch using our Pull Request template.
 
 ---
 
-## Code Style & Workflow Standards
+## Development & Code Standards
 
-- Keep YAML workflow definitions formatted and linted.
-- Ensure commit messages follow standard convention prefixes (`feat:`, `fix:`, `docs:`, `ci:`).
-- Avoid modifying core auto-commit triggers without clear documentation.
+- Keep PowerShell and Bash scripts modular, robust, and well-documented.
+- Ensure all automation scripts support preview mode and manual remote push defaults.
+- Do not introduce high-frequency auto-commit schedules or artificial contribution inflation scripts into remote GitHub workflows.
