@@ -1,0 +1,17 @@
+# CommitInfinity Repository Git Ignore Configuration
+# IDE / Editor files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and Scratch files
+*.log
+.artifacts/
+scratch/

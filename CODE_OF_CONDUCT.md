@@ -1,4 +1,4 @@
-<!-- CommitInfinity Code of Conduct -->
+<!-- CommitInfinity Code of Conduct (Updated) -->
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

@@ -1,4 +1,4 @@
-<!-- CommitInfinity Contribution Guidelines -->
+<!-- CommitInfinity Contribution Guidelines (Updated) -->
 # Contributing to CommitInfinity
 
 Thank you for your interest in contributing to **CommitInfinity**! We welcome contributions, bug reports, and feature suggestions.
