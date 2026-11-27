@@ -1,4 +1,4 @@
-<!-- CommitInfinity Security Policy (Updated) -->
+<!-- CommitInfinity Security Policy - Vulnerability Reporting -->
 # Security Policy
 
 ## Supported Versions

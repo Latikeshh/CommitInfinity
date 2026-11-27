@@ -1,4 +1,4 @@
-# CommitInfinity Repository Git Ignore Configuration
+# CommitInfinity Repository Git Ignore Configuration - Excluded Files
 # IDE / Editor files
 .idea/
 *.iml

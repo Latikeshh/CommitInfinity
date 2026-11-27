@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-CommitInfinity Metrics & Activity Logger
+CommitInfinity Metrics & Activity Logger - Repository Statistics Generator
 Generates real activity data and updates repository statistics.
 """
 
